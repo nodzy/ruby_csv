@@ -18,7 +18,7 @@ class Person
     rows = []
     CSV.foreach(filename, headers: true) do |row|
       row = row.to_h 
-      row = row.inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo}
+      row = row.inject({}){ |memo,(k,v)| memo[k.to_sym] = v; memo }
       rows << row
     end
     rows.map do |row|
